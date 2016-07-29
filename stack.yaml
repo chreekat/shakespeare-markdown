@@ -1,0 +1,8 @@
+resolver: lts-6.9
+packages:
+  - '.'
+  # Temporary, until shakespeare #190 is available
+  - location:
+      git: https://github.com/chreekat/shakespeare.git
+      commit: b35f351c926908c0d60694dd1c7c6dba0eb23923
+    extra-dep: true

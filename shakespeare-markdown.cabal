@@ -1,0 +1,51 @@
+name: shakespeare-markdown
+version: 0.1.0.0
+synopsis: Markdown for Shakespeare
+description: Provides Markdown support for Shakespeare. See Text.Marcus.
+homepage: https://github.com/chreekat/shakespeare-markdown
+license: BSD3
+license-file: LICENSE
+author: Bryan Richter
+maintainer: b@chreekat.net
+-- copyright:
+category: Web
+build-type: Simple
+-- extra-source-files:
+cabal-version: >=1.20
+source-repository head
+    type: git
+    location: https://github.com/chreekat/shakespeare-markdown
+
+library
+    exposed-modules:
+        Text.Marcus
+    -- bounds TBD
+    build-depends:
+        base >=4.8
+        , blaze-html
+        , markdown
+        , shakespeare
+        , text
+        , template-haskell
+    hs-source-dirs: src
+    default-language: Haskell2010
+    other-extensions:
+        TemplateHaskell
+
+test-suite test
+    main-is: Spec.hs
+    hs-source-dirs: test
+    other-modules:
+        Text.MarcusSpec
+        TestUrl
+    type: exitcode-stdio-1.0
+    build-depends:
+        base >=4.8
+        , hspec
+        , shakespeare-markdown
+        , text
+    default-language: Haskell2010
+    other-extensions:
+        TemplateHaskell
+        , QuasiQuotes
+        , OverloadedStrings
